@@ -6,9 +6,12 @@ import { Pressable, View } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { ThemedText } from "@/components/ThemedText";
+import { usePathname } from "expo-router";
 
 const DrawerLayout = () => {
   const colorScheme = useColorScheme();
+  const path = usePathname();
+  const isMyEventsTicketsPath = /^\/my-events\/[^/]+\/tickets$/.test(path);
   return (
     <Drawer
       screenOptions={{
@@ -78,9 +81,9 @@ const DrawerLayout = () => {
         }}
       />
       <Drawer.Screen
-        name="myEvents"
+        name="my-events"
         options={{
-          headerShown: true,
+          headerShown: !isMyEventsTicketsPath,
           drawerLabel: "my events",
           drawerIcon: ({ color, focused }) => (
             <TabBarIcon
@@ -92,15 +95,10 @@ const DrawerLayout = () => {
           title: "My Events",
           headerTintColor: "white",
           headerTitleAlign: "center",
-          headerBackground: () => (
-            <View
-              style={{
-                backgroundColor: "black",
-                height: "100%",
-                width: "100%",
-              }}
-            />
-          ),
+
+          headerStyle: {
+            backgroundColor: "black",
+          },
 
           headerRight: ({ pressColor, pressOpacity, tintColor }) => (
             <Pressable className="px-[5vw]">
