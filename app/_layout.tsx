@@ -15,7 +15,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
+const RootLayout = () => {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
@@ -36,11 +36,12 @@ export default function RootLayout() {
       <GestureHandlerRootView style={{ flex: 1 }}>
         <Stack>
           <Stack.Screen name="(onboard)" options={{ headerShown: false }} />
-          {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
           <Stack.Screen name="(drawers)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
       </GestureHandlerRootView>
     </ThemeProvider>
   );
-}
+};
+
+export default RootLayout;
