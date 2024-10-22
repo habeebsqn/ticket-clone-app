@@ -88,7 +88,7 @@ const DiscoverScreen = () => {
         {/* HeroSection */}
 
         {/* EventSection */}
-        <View className="px-[8vw] py-[5vh]">
+        <View className="px-[4vw] py-[5vh]">
           <FlatList
             data={events}
             renderItem={({ item }) => <EventCard item={item} />}
@@ -100,17 +100,17 @@ const DiscoverScreen = () => {
 
         {/* recent section */}
 
-        <View className="px-[8vw] my-[2vh]">
+        <View className="px-[4vw] my-[2vh]">
           <SectionHeader title="recently viewed" />
         </View>
 
         {/* recent section */}
 
         {/* presales section */}
-        <View className="px-[8vw] my-[2vh]">
+        <View className="px-[4vw] my-[2vh]">
           <SectionHeader title="SPONSORED PRESALES AND OFFERS" />
         </View>
-        <View className="px-[6vw] py-[5vh]">
+        <View className="px-[4vw] py-[5vh]">
           <FlatList
             data={offers}
             renderItem={({ item }) => <OffersCard item={item} />}
@@ -122,17 +122,17 @@ const DiscoverScreen = () => {
         {/* presales section */}
 
         {/* popular near you section */}
-        <View className="px-[8vw] my-[2vh]">
+        <View className="px-[4vw] my-[2vh]">
           <SectionHeader title="POPULAR NEAR YOU" />
         </View>
         {/* popular near you section */}
 
-        {/* popular near you section */}
-        <View className="px-[8vw] my-[2vh]">
+        {/* entertainment near you section */}
+        <View className="px-[4vw] my-[2vh]">
           <SectionHeader title="ENTERTAINMENT GUIDES" />
         </View>
 
-        <View className="px-[6vw] py-[5vh]">
+        <View className="px-[4vw] py-[5vh]">
           <FlatList
             data={ents}
             renderItem={({ item }) => <EntCard item={item} />}

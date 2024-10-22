@@ -38,7 +38,6 @@ export function ThemedBtn({
     <View
       style={[
         styles.btnContainer,
-
         {
           backgroundColor:
             type === "default"
@@ -52,13 +51,16 @@ export function ThemedBtn({
               : bgColor,
         },
       ]}
-      className={`w-[40vh] ${btnStyle} `}
+      className={`w-[40vh]   ${btnStyle} `}
       {...rest}
     >
       <Pressable
         android_ripple={{ color: "red" }}
         onPress={onPress}
-        style={styles.pressContainer}
+        style={({ pressed }) => [
+          styles.pressContainer,
+          pressed && { opacity: 0.5 },
+        ]}
       >
         <Text style={[{ color }, styles.title, textStyle]}>{title}</Text>
       </Pressable>
@@ -76,7 +78,6 @@ const styles = StyleSheet.create({
       height: 2,
       width: 0,
     },
-    width: "40%",
     overflow: "hidden",
   },
   pressContainer: {

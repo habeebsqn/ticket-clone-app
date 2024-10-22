@@ -7,7 +7,15 @@ import DrawerHeader from "./DrawerHeader";
 
 const CustomDrawer = (props: any) => {
   return (
-    <DrawerContentScrollView {...props} contentContainerStyle={{ gap: 10 }}>
+    <DrawerContentScrollView
+      {...props}
+      contentContainerStyle={{
+        gap: 10,
+        backgroundColor: "white",
+        flex: 1,
+        paddingTop: 0,
+      }}
+    >
       <DrawerHeader />
       <DrawerItemList {...props} />
     </DrawerContentScrollView>

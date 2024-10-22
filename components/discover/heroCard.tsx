@@ -2,6 +2,8 @@ import React from "react";
 import { ImageBackground } from "react-native";
 import { ThemedText } from "../ThemedText";
 import { ThemedBtn } from "../ThemedBtn";
+import SelectDropDown from "../SelectDropDown";
+import { countries } from "@/constants/countries";
 
 type Props = {
   backgroundImage: any;
