@@ -104,16 +104,17 @@ const DrawerLayout = () => {
           headerTintColor: "white",
           headerTitleAlign: "center",
           headerTitle: ({ tintColor, allowFontScaling, children, style }) => (
-            <View className="flex-row  items-center">
-              <Text className={`text-${tintColor} font-semibold text-lg mr-2`}>
+            <View className="flex-row  items-center ">
+              <Text className={`text-${tintColor} font-semibold text-lg `}>
                 {children}
               </Text>
-              <SelectDropDown
-                data={countries}
-                displayProperty="value"
-                onSelectProperty="value"
-                size={5}
-              />
+              <View className="px-4">
+                <SelectDropDown
+                  data={countries}
+                  displayProperty="value"
+                  onSelectProperty="value"
+                />
+              </View>
             </View>
           ),
 

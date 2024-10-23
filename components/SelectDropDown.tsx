@@ -58,7 +58,6 @@ const SelectDropDown = <T extends PickerProps>({
         // }
       }}
       renderItem={(item, index, isSelected) => {
-        console.log(isSelected);
         const rowItem = item[displayProperty]?.toLowerCase();
         const icon = item?.icon;
         return (
