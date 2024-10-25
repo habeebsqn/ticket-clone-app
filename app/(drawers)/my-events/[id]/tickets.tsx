@@ -1,3 +1,4 @@
+import withAuth from "@/components/navigation/withAuth";
 import React from "react";
 import { SafeAreaView, Text } from "react-native";
 
@@ -9,4 +10,4 @@ const Tickets = () => {
   );
 };
 
-export default Tickets;
+export default withAuth(Tickets);

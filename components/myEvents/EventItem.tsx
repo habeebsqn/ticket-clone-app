@@ -10,15 +10,19 @@ type myEvent = {
   item: {
     title: string;
     date: string;
-    location: string;
-    tickets: number;
-    img: any;
+    day: string;
+    month: string;
+    venue: string;
+    imgURL: any;
+    tickets?: number;
+    past: boolean;
+    ticketCount: string;
   };
-  past: boolean;
+  past?: boolean;
 };
 
-const EventItem = ({ item, past }: myEvent) => {
-  const { day, date, time } = useSplitDate(item?.date);
+const EventItem = ({ item }: myEvent) => {
+  // const { day, date, time } = useSplitDate(item?.date);
   const router = useRouter();
 
   const toTickets = (eventId: any) => {
@@ -28,14 +32,14 @@ const EventItem = ({ item, past }: myEvent) => {
   return (
     <Pressable onPress={toTickets}>
       <ImageBackground
-        source={item?.img}
+        source={{ uri: item.imgURL }}
         resizeMode="cover"
         className={`h-[25vh] ${
-          past ? "justify-between" : "justify-end"
-        } pb-[2vh]  bg-white opacity-80 overflow-hidden`}
+          item?.past ? "justify-between" : "justify-end"
+        } pb-[2vh]  bg-black opacity-100 overflow-hidden rounded-2xl`}
         imageStyle={{ borderRadius: 8 }}
       >
-        {past && (
+        {item?.past && (
           <ThemedView className="bg-[#353434] p-1 items-center myrounded-t-sm">
             <ThemedText className="text-white uppercase text-xs">
               Past event
@@ -52,7 +56,8 @@ const EventItem = ({ item, past }: myEvent) => {
             type="defaultSemiBold"
             className="capitalize font-normal text-white text-xs"
           >
-            {day && day} • {date && date} • {time && time} • {item?.location}
+            {/* {item?.day} •{item?.month} {item?.date} • {time && time} • {item?.venue} */}
+            {item?.day} •{item?.month} {item?.date} • {item?.venue}
           </ThemedText>
 
           <View className="flex-row space-x-3 items-center">
@@ -61,7 +66,7 @@ const EventItem = ({ item, past }: myEvent) => {
               type="defaultSemiBold"
               className="capitalize font-normal text-white text-xs"
             >
-              {item?.tickets} tickets
+              {item?.ticketCount} tickets
             </ThemedText>
           </View>
         </View>

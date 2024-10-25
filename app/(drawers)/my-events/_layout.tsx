@@ -1,3 +1,4 @@
+import withAuth from "@/components/navigation/withAuth";
 import { ThemedText } from "@/components/ThemedText";
 import { Stack } from "expo-router";
 import { Pressable } from "react-native";

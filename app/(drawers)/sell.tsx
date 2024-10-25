@@ -1,3 +1,4 @@
+import withAuth from "@/components/navigation/withAuth";
 import { ThemedText } from "@/components/ThemedText";
 import React from "react";
 import { SafeAreaView } from "react-native";
@@ -10,4 +11,4 @@ const Sell = () => {
   );
 };
 
-export default Sell;
+export default withAuth(Sell);
